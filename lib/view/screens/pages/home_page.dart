@@ -16,7 +16,6 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       extendBody: true,
-      
       body: Container(
         decoration: BoxDecoration(
           gradient: LinearGradient(
@@ -40,8 +39,9 @@ class HomePage extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
                 const HomeHeaderWidget(),
-                const SizedBox(height: 25,),
-               
+                const SizedBox(
+                  height: 25,
+                ),
                 Text(
                   "Hi, Marina",
                   style: TextStyle(
@@ -54,7 +54,9 @@ class HomePage extends StatelessWidget {
                       delay: const Duration(milliseconds: 300),
                     )
                     .fadeIn(),
-               const SizedBox(height: 4,),
+                const SizedBox(
+                  height: 4,
+                ),
                 Text(
                   "let's select your\nperfect place",
                   style: TextStyle(
@@ -75,7 +77,7 @@ class HomePage extends StatelessWidget {
                     .fadeIn(
                       duration: const Duration(seconds: 1),
                     ),
-                const SizedBox(height:  30),
+                const SizedBox(height: 30),
                 Row(
                   children: [
                     Expanded(
@@ -90,7 +92,7 @@ class HomePage extends StatelessWidget {
                         ),
                       ),
                     ),
-                    const SizedBox(width:30),
+                    const SizedBox(width: 30),
                     Expanded(
                       child: OfferWidget(
                         title: "RENT",
@@ -153,8 +155,9 @@ class HomePage extends StatelessWidget {
               childrenDelegate: SliverChildBuilderDelegate(
                 (context, index) => PlaceWidget(
                   image: PlacesData.allPlaces[index]["imgUrl"].toString().png,
-                  isFullView: bool.parse(PlacesData.allPlaces[index]["isFullView"].toString()),
-                  title:  PlacesData.allPlaces[index]["title"].toString(),
+                  isFullView: bool.parse(
+                      PlacesData.allPlaces[index]["isFullView"].toString()),
+                  title: PlacesData.allPlaces[index]["title"].toString(),
                 ),
                 childCount: PlacesData.allPlaces.length,
               ),
