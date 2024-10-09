@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:monipoint_animated_app/view/screens/bottom_navigator.dart';
 
 void main() {
+  SystemChrome.setPreferredOrientations([
+    DeviceOrientation.portraitUp,
+  ]);
   runApp(const MyApp());
 }
 
@@ -16,7 +20,8 @@ class MyApp extends StatelessWidget {
         designSize: const Size(360, 720),
         builder: (context, child) {
           return MaterialApp(
-            title: 'Flutter Demo',
+            title: 'Monipoint Animated',
+            debugShowCheckedModeBanner: false,
             theme: ThemeData(
               fontFamily: 'Euclid Circular A',
               colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
@@ -27,5 +32,3 @@ class MyApp extends StatelessWidget {
         });
   }
 }
-
-
